@@ -39,3 +39,13 @@ https://racket-lang.org/
 Chez Scheme:
 
 https://cisco.github.io/ChezScheme/
+
+# Scheme Specifications
+
+R5RS Scheme (older):
+
+https://schemers.org/Documents/Standards/R5RS/
+
+R6RS Scheme:
+
+http://www.r6rs.org/
