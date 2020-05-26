@@ -4,7 +4,9 @@ Summer Scheming!!!!!!
 
 
 
-Resources for Scheme Programming:
+## Resources for Scheme Programming:
+
+### Books
 
 SICP textbook, free online:
 
@@ -27,3 +29,13 @@ The Little Schemer, 4th ed, Friedman and Felleisen
 Simply Scheme, Brian Harvey and Matthew Wright
 
 Scheme and the Art of Programming, George Springer and Dan Friedman
+
+### Implementations
+
+Racket:
+
+https://racket-lang.org/
+
+Chez Scheme:
+
+https://cisco.github.io/ChezScheme/
