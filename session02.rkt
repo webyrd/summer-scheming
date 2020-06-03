@@ -1,5 +1,10 @@
 #lang racket
 
+;; namespace magic to make 'eval' work properly in the file (as opposed to in the REPL)
+;;
+;; https://stackoverflow.com/questions/20778926/mysterious-racket-error-define-unbound-identifier-also-no-app-syntax-trans
+(define-namespace-anchor anc)
+(define ns (namespace-anchor->namespace anc))
 
 ;; Scheme is homoiconic
 
@@ -21,7 +26,7 @@
 ;; =>
 (expt 3 4)
 
-;; (eval '(expt 3 4))
+(eval '(expt 3 4) ns)
 ;; =>
 81
 
