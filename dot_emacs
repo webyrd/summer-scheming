@@ -1,0 +1,58 @@
+;; Things to add to your .emacs file to better support Scheme/Racket.
+;;
+;; Your mileage may vary!
+;;
+;; Please let Will know if you have any problems.
+
+(setq auto-mode-alist (cons '("\\.ss" . scheme-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.sls" . scheme-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.rkt" . scheme-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.sx" . scheme-mode) auto-mode-alist))
+
+(add-hook 'scheme-mode-hook (lambda () (setq indent-tabs-mode nil)))  ; tabs are evil!
+
+(require 'quack)
+
+(put 'fresh 'scheme-indent-function 1)
+(put 'with-mutex 'scheme-indent-function 1)
+(put 'trace-lambda 'scheme-indent-function 1)
+(put 'lambdaf@ 'scheme-indent-function 1)
+(put 'lambdag@ 'scheme-indent-function 1)
+(put 'run 'scheme-indent-function 2)
+(put 'case-inf 'scheme-indent-function 1)
+(put 'letcc 'scheme-indent-function 1)
+(put 'let-poly 'scheme-indent-function 1)
+(put 'let-tie 'scheme-indent-function 1)
+(put 'conde 'scheme-indent-function 0)
+(put 'conda 'scheme-indent-function 0)
+(put 'condu 'scheme-indent-function 0)
+(put 'test 'scheme-indent-function 1)
+(put 'test-check 'scheme-indent-function 1)
+(put 'test-divergence 'scheme-indent-function 1)
+(put 'make-engine 'scheme-indent-function 0)
+(put 'run* 'scheme-indent-function 1)
+(put 'project 'scheme-indent-function 1)
+(put 'match 'scheme-indent-function 1)
+(put 'match-define 'scheme-indent-function 0)
+(put 'run/graph 'scheme-indent-function 0)
+(put 'pmatch 'scheme-indent-function 1)
+(put 'cases 'scheme-indent-function 1)
+(put 'let-values 'scheme-indent-function 1)
+(put 'call-with-values 'scheme-indent-function 2)
+(put 'syntax-case 'scheme-indent-function 2)
+(put 'syntax-rules+ 'scheme-indent-function 2)
+(put 'for-each 'scheme-indent-function 0)
+(put 'cond 'scheme-indent-function 0)
+
+(defun chez-scheme ()
+  "chez-scheme"
+  (interactive)
+  (run-scheme "scheme"))
+
+(defun racket-scheme ()
+  "racket-scheme"
+  (interactive)
+  (run-scheme "racket"))
+
+(global-set-key "\C-z\C-c" 'chez-scheme)
+(global-set-key "\C-z\C-v" 'racket-scheme)
